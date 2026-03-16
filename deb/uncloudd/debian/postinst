@@ -2,7 +2,7 @@
 
 case "$1" in
     configure)
-        useradd --system --home-dir /var/lib/uncloud --shell /usr/sbin/nologin --user-group uncloud || true
+        adduser --system --home /var/lib/uncloud --shell /usr/sbin/nologin uncloud || true
         systemctl daemon-reload
         systemctl enable uncloudd.service
         exit 0

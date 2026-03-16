@@ -8,7 +8,7 @@ Homepage: https://uncloud.run
 
 Package: uncloudd
 Architecture: any
-Depends: docker.io
+Depends: docker.io, containerd
 Pre-Depends: adduser, sysuser-helper
 Description: Uncloud Daemon
  Lightweight clustering and container orchestration tool that lets you deploy and
