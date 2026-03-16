@@ -1,0 +1,13 @@
+Source: uncloud-corrosion
+Section: utils
+Priority: optional
+Build-Depends: debhelper (>= 9), lsb-release
+Maintainer: Miek Gieben <miek@miek.nl>
+Vcs-Git: https://github.com/psviderski/uncloud
+Homepage: https://uncloud.run
+
+Package: uncloud-corrosion
+Architecture: any
+Pre-Depends: adduser, sysuser-helper
+Description: Uncloud gossip-based distributed store
+ Corrosion is a Rust program that propagates a SQLite database with a gossip protocol.

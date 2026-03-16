@@ -1,0 +1,21 @@
+[Unit]
+Description=Uncloud gossip-based distributed store
+PartOf=uncloudd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/uncloud-corrosion agent -c /var/lib/uncloud/corrosion/config.toml
+ExecReload=/usr/bin/uncloud-corrosion reload -c /var/lib/uncloude//corrosion/config.toml
+Restart=always
+RestartSec=2
+User=uncloudd
+Group=uncloudd
+
+# Hardening options.
+ProtectSystem=full
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectHome=true
+ProtectControlGroups=true
+ProtectKernelTunables=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX

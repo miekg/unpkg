@@ -1,0 +1,21 @@
+#!/bin/sh
+
+case "$1" in
+    configure)
+        systemctl daemon-reload
+        systemctl enable corrosion.service
+        exit 0
+        ;;
+
+    abort-upgrade)
+        exit 0
+        ;;
+
+    abort-remove|abort-deconfigure)
+        exit 0
+        ;;
+
+    *)
+        exit 1
+        ;;
+esac
