@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$1" in
+    configure)
+        useradd --system --home-dir /nonexistent --shell /usr/sbin/nologin --user-group uncloud || true
+        systemctl daemon-reload
+        systemctl enable uncloudd.service
+        exit 0
+        ;;
+
+    abort-upgrade)
+        exit 0
+        ;;
+
+    abort-remove|abort-deconfigure)
+        exit 0
+        ;;
+
+    *)
+        exit 1
+        ;;
+esac

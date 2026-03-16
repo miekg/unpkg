@@ -1,0 +1,6 @@
+{
+  "features": {
+    "containerd-snapshotter": true
+  },
+  "live-restore": true
+}

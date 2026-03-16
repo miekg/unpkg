@@ -1,0 +1,10 @@
+Source: uncloud
+Section: utils
+Priority: optional
+Maintainer: Miek Gieben <miek@miek.nl>
+Homepage: https://github.com/psviderski/uncloud
+Package: uncloudd
+Depends: docker.io
+Description: Uncloud Daemon
+ Lightweight clustering and container orchestration tool that lets you deploy and
+ manage web apps across cloud VMs and bare meta l with minimised cluster management overhead.
