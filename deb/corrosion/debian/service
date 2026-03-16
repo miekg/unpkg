@@ -8,8 +8,8 @@ ExecStart=/usr/bin/uncloud-corrosion agent -c /var/lib/uncloud/corrosion/config.
 ExecReload=/usr/bin/uncloud-corrosion reload -c /var/lib/uncloude//corrosion/config.toml
 Restart=always
 RestartSec=2
-User=uncloudd
-Group=uncloudd
+User=uncloud
+Group=uncloud
 
 # Hardening options.
 ProtectSystem=full
