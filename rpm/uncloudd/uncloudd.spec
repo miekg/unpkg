@@ -39,7 +39,7 @@ install -D -m 0755 %{name}d         %{buildroot}/%{_bindir}/%{name}d
 install -D -m 0644 uncloud.service  %{buildroot}/%{_unitdir}/uncloud.service
 
 install -D -m 0640 docker-daemon.json  %{buildroot}%{_sysconfdir}/docker/docker-daemon.json
-install -D -m 0640 %{name}d.conf        %{_prefix}/lib/sysusers.d/%{name}d.conf
+install -D -m 0640 %{name}d.conf       %{buildroot}/lib/sysusers.d/%{name}d.conf
 
 %files
 %{_bindir}/%{name}d
