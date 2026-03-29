@@ -22,7 +22,12 @@ https://github.com/psviderski/uncloud
 %prep
 
 %build
+%ifarch aarch64
+curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/uncloudd_linux_arm64.tar.gz > %{name}.tar.gz
+%endif
+%ifarch x86_64
 curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/uncloudd_linux_amd64.tar.gz > %{name}.tar.gz
+%endif
 tar xf %{name}.tar.gz
 
 %install
