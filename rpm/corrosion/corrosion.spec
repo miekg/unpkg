@@ -19,16 +19,16 @@ Corrosion is a Rust program that propagates a SQLite database with a gossip prot
 
 %build
 curl -L https://github.com/psviderski/corrosion/releases/download/v%{version}/corrosion-%{_arch}-unknown-linux-gnu.tar.gz > %{name}.tar.gz
-tar xf %{name}.tar.gz
+tar xf %{name}.tar.gz && mv corrosion %{name}
 
 %install
 cp %{_topdir}uncloud-corrosion.service %{buildroot}/../uncloud-corrosion.service
 
-install -D -m 0755 corrosion                  %{buildroot}/%{_bindir}/corrosion
-install -D -m 0644 uncloud-corrosion.service  %{buildroot}/%{_unitdir}/uncloud-corrosion.service
+install -D -m 0755 %{name }                  %{buildroot}/%{_bindir}/%{name}
+install -D -m 0644 uncloud-corrosion.service %{buildroot}/%{_unitdir}/uncloud-corrosion.service
 
 %files
-%{_bindir}/corrosion
+%{_bindir}/%{name}
 %{_unitdir}/uncloud-corrosion.service
 
 %post
