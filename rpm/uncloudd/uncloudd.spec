@@ -45,7 +45,7 @@ install -D -m 0640 %{name}d.conf        %{_prefix}/lib/sysusers.d/%{name}d.conf
 %{_bindir}/%{name}d
 %{_unitdir}/uncloud.service
 %{_sysconfdir}/docker/docker-daemon.json
-%{_prefix}/lib/sysusers.d/%{name}.conf
+%{_prefix}/lib/sysusers.d/%{name}d.conf
 
 %post
 %systemd_post uncloud.service
