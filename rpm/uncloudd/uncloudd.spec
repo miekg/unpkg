@@ -44,6 +44,7 @@ install -D -m 0750 -d                  %{buildroot}%{_localstatedir}/lib/%{name}
 %{_bindir}/%{name}d
 %{_unitdir}/uncloud.service
 %{_sysconfdir}/docker/docker-daemon.json
+%{_prefix}/lib/sysusers.d/%{name}.conf
 %dir %{_localstatedir}/lib/%{name}
 
 %post
