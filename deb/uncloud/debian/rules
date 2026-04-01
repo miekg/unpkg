@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
+# TODO(miek): defaults to amd64
+SOURCE          := https://github.com/psviderski/uncloud/releases/download/v$(SOURCE_VERSION)/uncloud_linux_amd64.tar.gz
+DOWNLOAD        := uncloud_linux_amd64.tar.gz
+BINARY          := uncloud
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_clean
+	if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
+	tar xf $(DOWNLOAD) && chmod 755 $(BINARY)
+
+override_dh_strip:
+
+override_dh_auto_clean:
+	rm -rf debian/$(BINARY)/usr/bin
+
+override_dh_auto_install:
+	mkdir -p debian/$(BINARY)/usr/bin
+	cp $(BINARY) debian/$(BINARY)/usr/bin

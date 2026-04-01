@@ -1,0 +1,14 @@
+Source: uncloud
+Section: utils
+Priority: optional
+Build-Depends: debhelper (>= 9), lsb-release
+Maintainer: Miek Gieben <miek@miek.nl>
+Vcs-Git: https://github.com/psviderski/uncloud
+Homepage: https://uncloud.run
+
+Package: uncloud
+Architecture: any
+Depends: docker.io, containerd, uncloud-corrosion
+Description: Uncloud CLI tool
+ Lightweight clustering and container orchestration tool that lets you deploy and
+ manage web apps across cloud VMs and bare metal with minimised cluster management overhead.
