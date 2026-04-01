@@ -1,11 +1,10 @@
 #!/usr/bin/make -f
 
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
-# TODO(miek): defaults to amd64
-UNCLOUD         := uncloud
-SOURCE          := https://github.com/psviderski/$(UC)/releases/download/v$(SOURCE_VERSION)/$(UC)_linux_amd64.tar.gz
-DOWNLOAD        := $(UC)_linux_amd64.tar.gz
-BINARY          := uc
+UC        := uncloud
+SOURCE    := https://github.com/psviderski/$(UC)/releases/download/v$(SOURCE_VERSION)/$(UC)_linux_amd64.tar.gz
+DOWNLOAD  := $(UC)_linux_amd64.tar.gz
+BINARY    := uc
 
 %:
 	dh $@
