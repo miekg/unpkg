@@ -2,9 +2,10 @@
 
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 # TODO(miek): defaults to amd64
-SOURCE          := https://github.com/psviderski/uncloud/releases/download/v$(SOURCE_VERSION)/uncloud_linux_amd64.tar.gz
-DOWNLOAD        := uncloud_linux_amd64.tar.gz
-BINARY          := uncloud
+UNCLOUD         := uncloud
+SOURCE          := https://github.com/psviderski/$(UC)/releases/download/v$(SOURCE_VERSION)/$(UC)_linux_amd64.tar.gz
+DOWNLOAD        := $(UC)_linux_amd64.tar.gz
+BINARY          := uc
 
 %:
 	dh $@
@@ -12,13 +13,16 @@ BINARY          := uncloud
 override_dh_auto_configure:
 	dh_clean
 	if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
-	tar xf $(DOWNLOAD) && chmod 755 $(BINARY)
+	tar xf $(DOWNLOAD) && mv uncloud $(BINARY) && chmod 755 $(BINARY)
+	./uc completion zsh > _uc
 
 override_dh_strip:
 
 override_dh_auto_clean:
-	rm -rf debian/$(BINARY)/usr/bin
+	rm -rf debian/$(UC)/usr/bin
 
 override_dh_auto_install:
-	mkdir -p debian/$(BINARY)/usr/bin
-	cp $(BINARY) debian/$(BINARY)/usr/bin
+	mkdir -p debian/$(UC)/usr/bin
+	cp $(BINARY) debian/$(UC)/usr/bin
+	mkdir -p debian/$(UC)/usr/share/zsh/vendor-completions
+	cp _uc debian/$(UC)/usr/share/zsh/vendor-completions
