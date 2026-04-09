@@ -15,10 +15,10 @@ override_dh_auto_configure:
 	tar xf $(DOWNLOAD) && mv uncloud $(BINARY) && chmod 755 $(BINARY)
 	./uc completion zsh > _uc
 	./uc completion bash > uc.bash
-	mkdir _man && rm -f manpages
-	#(cd _man && ../uc doc --manual)
-	(cd _man && touch uc.1)
-	for i in _man/*; do echo $$i >> manpages; done
+	mkdir -p debian/_man && rm -f debian/manpages
+	#(cd debian/_man && ../uc doc --manual)
+	(cd debian/_man && touch uc.1)
+	(cd debian; for i in _man/*; do echo $$i >> manpages; done )
 
 override_dh_strip:
 
