@@ -3,7 +3,6 @@
 case "$1" in
     configure)
         adduser --system --home /var/lib/uncloud --shell /usr/sbin/nologin --group uncloud || true
-        adduser uncloud adm || true
         systemctl daemon-reload
         systemctl enable uncloud.service
         exit 0
