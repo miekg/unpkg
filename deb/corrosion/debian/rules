@@ -2,8 +2,9 @@
 
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 # TODO(miek): defaults to amd64
-SOURCE          := https://github.com/psviderski/corrosion/releases/download/v${SOURCE_VERSION}/corrosion-x86_64-unknown-linux-gnu.tar.gz
+#SOURCE          := https://github.com/psviderski/corrosion/releases/download/v${SOURCE_VERSION}/corrosion-x86_64-unknown-linux-gnu.tar.gz
 DOWNLOAD        := corrosion-x86_64-unknown-linux-gnu.tar.gz
+SOURCE          := https://github.com/superfly/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
 BINARY          := uncloud-corrosion
 
 %:
