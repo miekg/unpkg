@@ -1,3 +1,9 @@
+uncloud-corrosion (0.1.0+test.1b0fcf1b12a81c5394dd4b9e5a7815b0ab95d575) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Miek Gieben <miek@miek.nl>  Wed, 15 Apr 2026 09:18:07 +0200
+
 uncloud-corrosion (0.1.0+test.636e143) unstable; urgency=medium
 
   * New upstream release
