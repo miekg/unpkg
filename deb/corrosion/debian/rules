@@ -1,11 +1,12 @@
 #!/usr/bin/make -f
 
 # TODO(miek): defaults to amd64
-#LOCAL           := ""  # if not empty, contains the path where to copy the binary from.
-LOCAL           := ~/src/github.com/superfly/corrosion/corrosion
+LOCAL           := ""  # if not empty, contains the path where to copy the binary from.
+#LOCAL           := ~/src/github.com/superfly/corrosion/corrosion
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 DOWNLOAD        := corrosion-x86_64-unknown-linux-gnu.tar.gz
-SOURCE          := https://github.com/superfly/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
+SOURCE          := https://github.com/psviderski/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
+#SOURCE          := https://github.com/superfly/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
 BINARY          := uncloud-corrosion
 
 %:
