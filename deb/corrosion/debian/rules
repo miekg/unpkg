@@ -6,7 +6,6 @@ LOCAL           := ""  # if not empty, contains the path where to copy the binar
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 DOWNLOAD        := corrosion-x86_64-unknown-linux-gnu.tar.gz
 SOURCE          := https://github.com/psviderski/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
-#SOURCE          := https://github.com/superfly/corrosion/releases/download/v${SOURCE_VERSION}/${DOWNLOAD}
 BINARY          := uncloud-corrosion
 
 %:
