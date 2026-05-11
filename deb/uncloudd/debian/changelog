@@ -1,3 +1,9 @@
+uncloud (0.19.0-science1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Miek Gieben <miek@miek.nl>  Mon, 11 May 2026 08:47:08 +0200
+
 uncloudd (0.18.0) unstable; urgency=medium
 
   * New upstream release
