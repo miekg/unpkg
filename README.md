@@ -1,6 +1,6 @@
 # Unpkg
 
-Debian and rpm packaging for [Uncloud](https://uncloud.run). This now used my [temporary
+Debian and rpm packaging for [Uncloud](https://uncloud.run). This now uses my [temporary
 fork](https://github.com/miekg/uncloudplus).
 
 No premade packages, just the code to create your own.
