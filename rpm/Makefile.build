@@ -1,5 +1,4 @@
 all:
-	(cd corrosion; rpmbuild --define "%source_date_epoch_from_changelog 0" -bb corrosion.spec && rm -rf ~/rpmbuild)
 	(cd uncloudd; rpmbuild --define "%source_date_epoch_from_changelog 0" -bb uncloudd.spec && rm -rf ~/rpmbuild)
 
 clean:
