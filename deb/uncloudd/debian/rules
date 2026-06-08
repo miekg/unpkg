@@ -12,7 +12,8 @@ BINARY          := uncloudd
 
 override_dh_auto_configure:
 	dh_clean
-	if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
+	#if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
+	curl -L $(SOURCE) > $(DOWNLOAD)
 	tar xf $(DOWNLOAD) && chmod 755 $(BINARY)
 
 override_dh_strip:
