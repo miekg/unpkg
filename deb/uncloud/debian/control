@@ -9,7 +9,6 @@ Homepage: https://uncloud.run
 Package: uncloud
 Architecture: any
 Conflicts: uncloud-only
-Depends: docker.io, containerd
 Description: Uncloud CLI tool
  Lightweight clustering and container orchestration tool that lets you deploy and
  manage web apps across cloud VMs and bare metal with minimised cluster management overhead.
