@@ -7,11 +7,11 @@ Requires=docker.service
 [Service]
 Type=notify
 ExecStart=/usr/bin/uncloudd
-TimeoutStartSec=600
+TimeoutStartSec=600 # need to pull uncloud-corrosion
 Restart=always
 RestartSec=2
 
-# Hardening options.
+# Hardening options
 NoNewPrivileges=true
 ProtectSystem=full
 ProtectControlGroups=true
@@ -23,3 +23,4 @@ RestrictNamespaces=true
 
 [Install]
 WantedBy=multi-user.target
+After=docker
