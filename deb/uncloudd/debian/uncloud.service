@@ -23,4 +23,3 @@ RestrictNamespaces=true
 
 [Install]
 WantedBy=multi-user.target
-After=docker
