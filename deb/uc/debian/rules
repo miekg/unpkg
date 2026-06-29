@@ -11,7 +11,6 @@ BINARY    := uc
 
 override_dh_auto_configure:
 	dh_clean
-	#if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
 	curl -L $(SOURCE) > $(DOWNLOAD)
 	tar xf $(DOWNLOAD) && chmod 755 $(BINARY)
 	./uc completion zsh > _uc

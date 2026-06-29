@@ -1,4 +1,4 @@
-Source: uncloud
+Source: uc
 Section: utils
 Priority: optional
 Build-Depends: debhelper (>= 9), lsb-release
@@ -6,7 +6,7 @@ Maintainer: Miek Gieben <miek@miek.nl>
 Vcs-Git: https://github.com/psviderski/uncloud
 Homepage: https://uncloud.run
 
-Package: uncloud
+Package: uc
 Architecture: any
 Description: Uncloud CLI tool
  Lightweight clustering and container orchestration tool that lets you deploy and
