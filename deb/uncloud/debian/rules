@@ -2,7 +2,7 @@
 
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 VERSION   := 0.19.0-nightly
-UC        := uncloud
+UC        := uc
 #SOURCE    := https://github.com/psviderski/$(UC)/releases/download/v$(SOURCE_VERSION)/$(UC)_linux_amd64.tar.gz
 DOWNLOAD  := $(UC)_linux_amd64.tar.gz
 SOURCE    := https://github.com/miekg/uncloudplus/releases/download/nightly/$(DOWNLOAD)
@@ -15,7 +15,7 @@ override_dh_auto_configure:
 	dh_clean
 	#if [ ! -f $(DOWNLOAD) ]; then curl -L $(SOURCE) > $(DOWNLOAD); fi
 	curl -L $(SOURCE) > $(DOWNLOAD)
-	tar xf $(DOWNLOAD) && mv uncloud $(BINARY) && chmod 755 $(BINARY)
+	tar xf $(DOWNLOAD) && chmod 755 $(BINARY)
 	./uc completion zsh > _uc
 	./uc completion bash > uc.bash
 	mkdir -p _man && rm -f debian/manpages
