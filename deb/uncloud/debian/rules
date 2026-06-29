@@ -1,9 +1,7 @@
 #!/usr/bin/make -f
 
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
-VERSION   := 0.19.0-nightly
 UC        := uc
-#SOURCE    := https://github.com/psviderski/$(UC)/releases/download/v$(SOURCE_VERSION)/$(UC)_linux_amd64.tar.gz
 DOWNLOAD  := $(UC)_linux_amd64.tar.gz
 SOURCE    := https://github.com/miekg/uncloudplus/releases/download/nightly/$(DOWNLOAD)
 BINARY    := uc
