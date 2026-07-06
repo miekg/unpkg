@@ -1,5 +1,6 @@
 all:
 	(cd uncloudd; rpmbuild --define "%source_date_epoch_from_changelog 0" -bb uncloudd.spec && rm -rf ~/rpmbuild)
+	(cd uc; rpmbuild --define "%source_date_epoch_from_changelog 0" -bb uc.spec && rm -rf ~/rpmbuild)
 
 clean:
 	git clean -f -d

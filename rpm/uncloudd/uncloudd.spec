@@ -1,5 +1,5 @@
 Name:           uncloud
-Version:        0.18.0
+Version:        0.20.0
 Release:        1.0
 Summary:        Uncloud Daemon
 License:        ASL-2.0
@@ -8,6 +8,7 @@ Source0:        %{name}-%{version}.tar.gz
 Source1:        uncloud.service
 Source2:        docker-daemon.json
 Requires:       docker
+Recommends:     uc
 BuildRequires:  pkgconfig(systemd)
 %{?systemd_ordering}
 
