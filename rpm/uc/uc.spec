@@ -26,9 +26,9 @@ curl -L %{_url}/%{name}_linux_arm64.tar.gz > %{name}.tar.gz
 curl -L %{_url}/%{name}_linux_amd64.tar.gz > %{name}.tar.gz
 %endif
 tar xf %{name}.tar.gz
-%{name} docs --manual
-%{name} completion zsh > _uc
-%{name} completion bash > uc.bash
+./%{name} docs --manual
+./%{name} completion zsh > _uc
+./%{name} completion bash > uc.bash
 
 %install
 install -D -m 0755 %{name}           %{buildroot}/%{_bindir}/%{name}
