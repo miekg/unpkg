@@ -14,15 +14,16 @@ manage web apps across cloud VMs and bare metal with minimised cluster managemen
 https://github.com/psviderski/uncloud
 
 %define _topdir %(echo $PWD)/
+%define _url https://github.com/miekg/uncloudplus/releases/download/nightly
 
 %prep
 
 %build
 %ifarch aarch64
-curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/%{name}_linux_arm64.tar.gz > %{name}.tar.gz
+curl -L %{_url}/%{name}_linux_arm64.tar.gz > %{name}.tar.gz
 %endif
 %ifarch x86_64
-curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/%{name}_linux_amd64.tar.gz > %{name}.tar.gz
+curl -L %{_url}/%{name}_linux_amd64.tar.gz > %{name}.tar.gz
 %endif
 tar xf %{name}.tar.gz
 %{name} docs --manual

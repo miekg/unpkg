@@ -19,15 +19,16 @@ https://github.com/psviderski/uncloud
 
 %define services uncloud.service
 %define _topdir %(echo $PWD)/
+%define _url https://github.com/miekg/uncloudplus/releases/download/nightly/
 
 %prep
 
 %build
 %ifarch aarch64
-curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/uncloudd_linux_arm64.tar.gz > %{name}.tar.gz
+curl -L %{_url}/%{name}d_linux_arm64.tar.gz > %{name}.tar.gz
 %endif
 %ifarch x86_64
-curl -L https://github.com/psviderski/uncloud/releases/download/v%{version}/uncloudd_linux_amd64.tar.gz > %{name}.tar.gz
+curl -L %{_url}/%{name}d_linux_amd64.tar.gz > %{name}.tar.gz
 %endif
 tar xf %{name}.tar.gz
 
