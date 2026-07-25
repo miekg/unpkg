@@ -52,6 +52,10 @@ install -D -m 0640 %{name}d.conf       %{buildroot}/usr/lib/sysusers.d/%{name}d.
 %post
 %systemd_post uncloud.service
 mkdir /var/lib/uncloud && chown uncloud:uncloud /var/lib/uncloud
+# selinux: allow uncloud to mount these paths in the container
+chcon -Rt container_file_t /var/lib/uncloud
+chcon -Rt container_file_t /run/uncloud
+chcon  -t container_file_t /var/run/docker.sock
 
 %preun
 %systemd_preun uncloud.service
