@@ -2,7 +2,7 @@
 Description=Uncloud machine daemon
 After=network-online.target
 Wants=network-online.target
-Before=docker.service
+Requires=docker.socket
 Requires=docker.socket
 
 [Service]

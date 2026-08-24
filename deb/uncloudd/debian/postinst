@@ -2,10 +2,12 @@
 
 case "$1" in
     configure)
+        addgroup --system uncloud || true
         adduser --system --home /var/lib/uncloud --shell /usr/sbin/nologin --group uncloud || true
         systemctl daemon-reload
+        systemctl enable uncloud.socket
         systemctl enable uncloud.service
-        systemctl restart uncloud.service
+        systemctl start uncloud.service
         exit 0
         ;;
 

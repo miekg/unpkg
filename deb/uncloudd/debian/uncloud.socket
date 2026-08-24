@@ -1,0 +1,11 @@
+[Unit]
+Description=Uncloud Socket for the API
+
+[Socket]
+ListenStream=/run/uncloud.sock
+SocketMode=0660
+SocketUser=uncloud
+SocketGroup=uncloud
+
+[Install]
+WantedBy=sockets.target

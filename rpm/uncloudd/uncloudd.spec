@@ -34,11 +34,13 @@ tar xf %{name}.tar.gz
 
 %install
 cp %{_topdir}uncloud.service %{buildroot}/../uncloud.service
+cp %{_topdir}uncloud.service %{buildroot}/../uncloud.socket
 cp %{_topdir}%{name}d.conf %{buildroot}/../%{name}d.conf
 cp %{_topdir}docker-daemon.json %{buildroot}/../docker-daemon.json
 
 install -D -m 0755 %{name}d         %{buildroot}/%{_bindir}/%{name}d
 install -D -m 0644 uncloud.service  %{buildroot}/%{_unitdir}/uncloud.service
+install -D -m 0644 uncloud.socket   %{buildroot}/%{_unitdir}/uncloud.socket
 
 install -D -m 0640 docker-daemon.json  %{buildroot}%{_sysconfdir}/docker/docker-daemon.json
 install -D -m 0640 %{name}d.conf       %{buildroot}/usr/lib/sysusers.d/%{name}d.conf
@@ -46,10 +48,12 @@ install -D -m 0640 %{name}d.conf       %{buildroot}/usr/lib/sysusers.d/%{name}d.
 %files
 %{_bindir}/%{name}d
 %{_unitdir}/uncloud.service
+%{_unitdir}/uncloud.socket
 %{_sysconfdir}/docker/docker-daemon.json
 /usr/lib/sysusers.d/%{name}d.conf
 
 %post
+%systemd_post uncloud.socket
 %systemd_post uncloud.service
 mkdir /var/lib/uncloud && chown uncloud:uncloud /var/lib/uncloud
 
