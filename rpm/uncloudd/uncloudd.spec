@@ -1,5 +1,5 @@
 Name:           uncloud
-Version:        0.20.0
+Version:        0.21.0
 Release:        1.0
 Summary:        Uncloud Daemon
 License:        ASL-2.0
