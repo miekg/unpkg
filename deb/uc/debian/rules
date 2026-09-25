@@ -3,7 +3,7 @@
 SOURCE_VERSION  := $(shell dpkg-parsechangelog --show-field version)
 UC        := uc
 DOWNLOAD  := $(UC)_linux_amd64.tar.gz
-SOURCE    := https://github.com/miekg/uncloudplus/releases/download/nightly/$(DOWNLOAD)
+SOURCE    := https://github.com/psviderski/uncloud/releases/download/nightly/$(DOWNLOAD)
 BINARY    := uc
 
 %:

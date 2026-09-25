@@ -14,7 +14,7 @@ manage web apps across cloud VMs and bare metal with minimised cluster managemen
 https://github.com/psviderski/uncloud
 
 %define _topdir %(echo $PWD)/
-%define _url https://github.com/miekg/uncloudplus/releases/download/nightly
+%define _url https://github.com/psviderski/uncloud/releases/download/nightly
 
 %prep
 
