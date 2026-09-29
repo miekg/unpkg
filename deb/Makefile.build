@@ -1,6 +1,7 @@
 all:
-	(cd uncloudd; dpkg-buildpackage -us -uc)
-	(cd uc; dpkg-buildpackage -us -uc)
+	# this build as been modified to run on Fedora.
+	(cd uncloudd; dpkg-buildpackage -us -uc -b -d)
+	(cd uc; dpkg-buildpackage -us -uc -b -d)
 
 clean:
 	git clean -f -d
