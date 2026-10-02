@@ -56,7 +56,7 @@ install -D -m 0640 %{name}d.conf       %{buildroot}/usr/lib/sysusers.d/%{name}d.
 %systemd_post uncloud.socket
 %systemd_post uncloud.service
 semanage permissive -a container_t
-mkdir /var/lib/uncloud && chown uncloud:uncloud /var/lib/uncloud
+mkdir -p /var/lib/uncloud && chown uncloud:uncloud /var/lib/uncloud
 
 %preun
 %systemd_preun uncloud.service
