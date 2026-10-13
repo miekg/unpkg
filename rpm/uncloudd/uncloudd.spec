@@ -7,7 +7,7 @@ URL:            https://uncloud.run
 Source0:        %{name}-%{version}.tar.gz
 Source1:        uncloud.service
 Source2:        docker-daemon.json
-Requires:       docker
+Requires:       docker,semanage
 Recommends:     uc
 BuildRequires:  pkgconfig(systemd)
 %{?systemd_ordering}
