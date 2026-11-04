@@ -8,7 +8,7 @@ Requires=docker.socket
 [Service]
 Type=notify
 ExecStart=/usr/bin/uncloudd
-TimeoutStartSec=600 # need to pull uncloud-corrosion
+TimeoutStartSec=600
 Restart=always
 RestartSec=2
 
